@@ -31,6 +31,10 @@ echo " "
 # Change the 4 lines below with the actual instructions you need:
 humann -i $1 -o /u/home/f/fquerdas/bablab/data/mbb/microbiome/w1_humann_output/${1%.*}_humann --threads 20 --input-format fastq
 
+# remove all of the temp output files besides the log file
+cd /u/home/f/fquerdas/bablab/data/mbb/microbiome/w1_humann_output/ 
+find . -type f ! \( -name '*log*' -o -name '*genefamilies*' -o -name '*pathabundance*' -o -name '*pathcoverage*' \) -print0 | xargs -0 -I {} rm -v {}
+
 # echo job info on joblog:
 echo " "
 echo "Job $JOB_ID ended on:   " `hostname -s`
