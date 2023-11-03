@@ -29,11 +29,11 @@ module load fastqc
 echo " "
 
 # Change the 4 lines below with the actual instructions you need:
-kneaddata --input $1 --input $2 --output-prefix ${1%%_*}_kneaddata --output /u/home/f/fquerdas/bablab/data/mbb/microbiome/w1_kneaddata --reference-db /u/local/apps/BIOBAKERY/biobakery_workflows_databases/kneaddata_db_human_genome --serial --run-trf --threads 20 --processes 20 --remove-intermediate-output --run-fastqc-start --run-fastqc-end
+kneaddata --input $1 --input $2 --output-prefix ${1%%_*}_kneaddata --output /u/home/f/fquerdas/bablab/data/mbb/microbiome/w1_kneaddata --reference-db /u/local/apps/BIOBAKERY/biobakery_workflows_databases/kneaddata_db_human_genome --serial --run-trf --threads 20 --processes 20 --remove-intermediate-output --cat-final-output --run-fastqc-start --run-fastqc-end --sequencer-source TruSeq3
 
 # remove the intermediate output
 cd /u/home/f/fquerdas/bablab/data/mbb/microbiome/w1_kneaddata 
-find . -type f ! \( -path './fastqc/*' -o \( -name '*_paired_2*' -o -name '*_paired_1*' -o -name '*log*' \) \) -print0 | xargs -0 -I {} rm -v {}
+find . -type f ! \( -path './fastqc/*' -o \( -name '*_paired_2*' -o -name '*_paired_1*' -o -name '*log*' -o -name '*_kneaddata.fastq' \) \) -print0 | xargs -0 -I {} rm -v {}
 
 # echo job info on joblog:
 echo " "
