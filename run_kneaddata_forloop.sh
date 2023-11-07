@@ -33,7 +33,7 @@ kneaddata --input $1 --input $2 --output-prefix ${1%%_*}_kneaddata --output /u/h
 
 # remove the intermediate output
 cd /u/home/f/fquerdas/bablab/data/mbb/microbiome/w1_kneaddata 
-find . -type f ! \( -path './fastqc/*' -o \( -name '*_paired_2*' -o -name '*_paired_1*' -o -name '*log*' -o -name '*_kneaddata.fastq' \) \) -print0 | xargs -0 -I {} rm -v {}
+find . -type f -name "${1%%_*}*" ! \( -path './fastqc/*' -o \( -name '*_paired_2*' -o -name '*_paired_1*' -o -name '*log*' -o -name '*_kneaddata.fastq' \) \) -print0 | xargs -0 -I {} rm -v {}
 
 # echo job info on joblog:
 echo " "
