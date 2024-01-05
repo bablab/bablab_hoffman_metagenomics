@@ -11,7 +11,7 @@ Coming soon
 To merge all profiled metagenomes:
 1) Load biobakery environment
 2) Run:
-```
+```bash
 cd bablab/data/mbb/microbiome/w1_metaphlan_output
 mkdir combined #make a folder for all combined output
 merge_metaphlan_tables.py *metagenome.txt > combined/MBB_w1_merged_abundance_table.txt
