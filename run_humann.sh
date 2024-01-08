@@ -31,9 +31,9 @@ echo " "
 # Change the 4 lines below with the actual instructions you need:
 humann -i $1 -o /u/home/f/fquerdas/bablab/data/mbb/microbiome/w1_humann_output/ --threads 20 --input-format fastq
 
-# remove all of the temp output files besides the log file
+# remove all of the temp output files in that sample's directory ONLY, besides the log file
 cd /u/home/f/fquerdas/bablab/data/mbb/microbiome/w1_humann_output/ 
-find . -type f ! \( -name '*log*' -o -name '*genefamilies*' -o -name '*pathabundance*' -o -name '*pathcoverage*' \) -print0 | xargs -0 -I {} rm -v {}
+find . -type f -name "*${1%%_*}*" ! \( -name '*log*' -o -name '*genefamilies*' -o -name '*pathabundance*' -o -name '*pathcoverage*' \) -print0 | xargs -0 -I {} rm -v {}
 
 # move the log file into the main folder
 cd ${1%%_*}_kneaddata_humann_temp
