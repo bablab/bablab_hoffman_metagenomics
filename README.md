@@ -13,10 +13,23 @@ As of Jan 2024, this version has kneaddata v0.10.0, humann v3.7, and metaphlan v
 Kneaddata was downgraded from the most updated (v11) in order to get paired end read processing to run correctly. 
 
 ## Information on how to submit jobs to run these scripts
-Coming soon
-
-## Commands run manually after kneaddata
-Coming soon
+To process all the samples at the same time, for loop commands were run which run one job per sample. 
+For kneaddata, the following was run in the raw data folder:
+```bash
+for f in *R1_001.fastq.gz;
+  do name=$(basename $f R1_001.fastq.gz); qsub ../../scripts/run_kneaddata_forloop.sh ${name}R1_001.fastq.gz ${name}R2_001.fastq.gz; done
+```
+For metaphlan, from the folder with kneaddata outputs (forward and reverse reads merged):
+```bash
+for f in *_kneaddata.fastq;
+do name=$(basename $f _kneaddata.fastq);
+qsub ../scripts/run_metaphlan_merged.sh ${name}_kneaddata.fastq;
+done
+```
+For humann, from the folder with kneaddata outputs (forward and reverse reads merged):
+```bash
+for file in *fastq; do qsub ../scripts/run_humann.sh $file; done 
+```
 
 ## Commands run manually after metaphlan
 To merge all profiled metagenomes:
