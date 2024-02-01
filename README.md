@@ -49,4 +49,4 @@ To normalize abundances within sample (i.e., to account for uneven sequencing de
 ```bash
 ./humann_normalize_loop.sh
 ```
-Note: if you get an error saying permissions denied, you need to make it executable by running: 'chmod +x humann_normalize_loop.sh'
+Note: if you get an error saying permissions denied, you need to make it executable by running: `chmod +x humann_normalize_loop.sh`
