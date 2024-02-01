@@ -42,4 +42,11 @@ merge_metaphlan_tables.py *metagenome.txt > combined/MBB_w1_merged_abundance_tab
 ```
 
 ## Commands run manually after humann
-Coming soon
+To normalize abundances within sample (i.e., to account for uneven sequencing depth between samples):
+1) Load biobakery environment
+2) cd to scripts folder
+3) Run humann_normalize_loop.sh by doing:
+```bash
+./humann_normalize_loop.sh
+```
+Note: if you get an error saying permissions denied, you need to make it executable by running: 'chmod +x humann_normalize_loop.sh'
