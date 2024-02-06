@@ -50,3 +50,6 @@ To normalize abundances within sample (i.e., to account for uneven sequencing de
 ./humann_normalize_loop.sh
 ```
 Note: if you get an error saying permissions denied, you need to make it executable by running: `chmod +x humann_normalize_loop.sh`
+
+To regroup gene families to other functional categories:
+1) Download mapping files:  `humann_databases --download utility_mapping full /u/home/f/fquerdas/bablab/data/mbb/microbiome/databases`
