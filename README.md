@@ -1,5 +1,5 @@
 # bablab_hoffman_metagenomics
-Scripts to run biobakery wmgx workflow with MBB metagenomics data on hoffman2
+Scripts to run biobakery wmgx workflow with MBB metagenomics data on hoffman2. Written by Fran Querdasi and Naomi Gancz
 
 ## Load the hoffman-wide biobakery software
 ```bash
@@ -10,7 +10,9 @@ export PATH=/u/local/apps/TRF/4.09.1/bin:$PATH
 module load samtools
 ```
 As of Jan 2024, this version has kneaddata v0.10.0, humann v3.7, and metaphlan v4.0.6. 
-Kneaddata was downgraded from the most updated (v11) in order to get paired end read processing to run correctly. 
+Kneaddata was downgraded from the most updated (v11) in order to get paired end read processing to run correctly.
+
+If you would like to set up biobakery workflows with the same specifications as we installed on Hoffman, please refer to the document: `installation_requirements_for_biobakery.rtf` for dependencies and installation instructions. 
 
 ## Information on how to submit jobs to run these scripts
 To process all the samples at the same time, for loop commands were run which run one job per sample. 
@@ -50,3 +52,6 @@ To normalize abundances within sample (i.e., to account for uneven sequencing de
 ./humann_normalize_loop.sh
 ```
 Note: if you get an error saying permissions denied, you need to make it executable by running: `chmod +x humann_normalize_loop.sh`
+
+To regroup gene families to other functional categories:
+1) Download mapping files:  `humann_databases --download utility_mapping full /u/home/f/fquerdas/bablab/data/mbb/microbiome/databases`
