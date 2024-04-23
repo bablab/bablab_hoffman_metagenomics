@@ -44,6 +44,9 @@ merge_metaphlan_tables.py *metagenome.txt > combined/MBB_w1_merged_abundance_tab
 ```
 
 ## Commands run manually after humann
+For humann, before merging all samples, we needed to reduce the number of pathways specified in each file to avoid a memory issue. Since the raw output gives overall pathways as well as pathways broken down by each gene's contribution, we removed the more fine-grained broken down pathways (because they are not of interest). To do that:
+1) Run humann_reduce_pathways.R
+
 To normalize abundances within sample (i.e., to account for uneven sequencing depth between samples):
 1) Load biobakery environment
 2) cd to scripts folder
