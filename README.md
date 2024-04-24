@@ -1,5 +1,5 @@
 # bablab_hoffman_metagenomics
-Scripts to run biobakery wmgx workflow with MBB metagenomics data on hoffman2. Written by Fran Querdasi and Naomi Gancz
+Scripts to run biobakery wmgx workflow with MBB metagenomics data on hoffman2. Written by Fran Querdasi and Naomi Gancz. In addition to this repository and the two authors, when building upon this pipeline please acknowledge Raffaella D'Auria for her work installing the software on hoffman and troubleshooting related issues. Thank you!
 
 ## Load the hoffman-wide biobakery software
 ```bash
@@ -12,7 +12,7 @@ module load samtools
 As of Jan 2024, this version has kneaddata v0.10.0, humann v3.7, and metaphlan v4.0.6. 
 Kneaddata was downgraded from the most updated (v11) in order to get paired end read processing to run correctly.
 
-If you would like to set up biobakery workflows with the same specifications as we installed on Hoffman, please refer to the document: `installation_requirements_for_biobakery.rtf` for dependencies and installation instructions. 
+If you would like to set up biobakery workflows with the same specifications as we installed on Hoffman, please refer to the document: `installation_requirements_for_biobakery.rtf` for dependencies and installation instructions. The file `requirements.txt` lists all of the software dependencies and versions required. 
 
 ## Information on how to submit jobs to run these scripts
 To process all the samples at the same time, for loop commands were run which run one job per sample. 
