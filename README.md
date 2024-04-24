@@ -53,7 +53,7 @@ qrsh -l h_data=5G,h_rt=1:00:00 # open interactive session with 5G of data and 1 
 module load Rstudio
 rstudio & 
 ```
-3) Open and run humann_reduce_pathways.R
+3) Open and run `humann_reduce_pathways.R`
 
 To normalize abundances within sample (i.e., to account for uneven sequencing depth between samples):
 1) Load biobakery environment
