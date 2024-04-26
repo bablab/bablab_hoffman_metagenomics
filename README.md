@@ -1,7 +1,7 @@
 # bablab_hoffman_metagenomics
 Scripts to run biobakery wmgx workflow with MBB metagenomics data on hoffman2. Scripts were written by Fran Querdasi and Naomi Gancz. 
 
-In addition to this repository and the two authors, when building upon this pipeline please acknowledge Raffaella D'Auria for her work installing the software on hoffman and troubleshooting related issues, and Julianne Yang for the important groundwork that she laid with using biobakery software on hoffman. If you do in fact use Hoffman2 to run any part of this software, please finally acknowledge the hoffman cluster with this text: "This work used computational and storage services associated with the Hoffman2 Shared Cluster provided by UCLA Office of Advanced Research Computing’s Research Technology Group.". Thank you!
+In addition to this repository and the two authors, when building upon this pipeline please acknowledge Dr. Raffaella D'Auria of OARC for her work installing the software on hoffman and troubleshooting related issues, and Julianne Yang for the important groundwork that she laid with using biobakery software on hoffman. If you do in fact use Hoffman2 to run any part of this software, please finally acknowledge the hoffman cluster with this text: "This work used computational and storage services associated with the Hoffman2 Shared Cluster provided by UCLA Office of Advanced Research Computing’s Research Technology Group.". Thank you!
 
 ## Load the hoffman-wide biobakery software
 ```bash
