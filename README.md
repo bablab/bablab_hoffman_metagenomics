@@ -57,6 +57,13 @@ rstudio &
 ```
 3) Open and run `humann_reduce_pathways.R`
 
+To generate merged unstratified output (overall pathways and pathways broken down by each gene's conribution):
+1) Request a computing session with 48GB of memory:
+`qrsh -l h_rt=3:00:00,h_data=4G -pe shared 12`
+2) Load biobakery environment
+3) Navigate to w1_humann_output
+4) Run: `humann_join_tables -i . -o combined/mbb_w1_pathways_rpk_unstrat.tsv --file_name pathabundance.tsv` 
+
 To normalize abundances within sample (i.e., to account for uneven sequencing depth between samples):
 1) Load biobakery environment
 2) cd to scripts folder
